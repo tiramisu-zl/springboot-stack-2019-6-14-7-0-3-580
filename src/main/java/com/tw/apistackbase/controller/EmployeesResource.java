@@ -51,11 +51,8 @@ public class EmployeesResource {
 
     @DeleteMapping("/{id}")
     public ResponseEntity<?> delete(@PathVariable int id) {
-        try {
-            employeeRepository.delete(id);
-        } catch (Exception ex) {
-            return ResponseEntity.notFound().build();
-        }
+        employeeRepository.delete(id);
+
         return ResponseEntity.ok().build();
     }
 
